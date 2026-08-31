@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail" data-bg-color="#F6F3EA">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#F6F3EA"/>
+    <path d="M600 560C600 560 470 480 470 360C470 300 520 268 566 286C588 295 600 330 600 330C600 330 612 295 634 286C680 268 730 300 730 360C730 480 600 560 600 560Z" fill="#7D8C5C"/>
+    <path d="M600 330V540" stroke="#26301F" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+    <text x="600" y="640" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="66" fill="#26301F">The 3R Clinic</text>
+    <rect x="520" y="668" width="160" height="4" rx="2" fill="#B8623C"/>
+  </svg>
+</template>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+body{margin:0;background:#F6F3EA;color:#26301F;font-family:'Karla',system-ui,sans-serif;font-weight:400;overflow-x:hidden;}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;}
+input{font-family:inherit;}
+::selection{background:#B8623C;color:#FBF9F3;}
+:focus-visible{outline:2px solid #B8623C;outline-offset:3px;border-radius:3px;}
+section{scroll-margin-top:96px;}
+@keyframes ksGrow{0%{opacity:0;transform:translateY(0.95em);filter:blur(7px);}55%{opacity:1;filter:blur(0);}100%{opacity:1;transform:translateY(0);filter:blur(0);}}
+@keyframes ksBlob{0%{border-radius:63% 37% 54% 46%/55% 48% 52% 45%;}25%{border-radius:41% 59% 55% 45%/49% 61% 39% 51%;}50%{border-radius:55% 45% 38% 62%/63% 45% 55% 37%;}75%{border-radius:60% 40% 48% 52%/40% 57% 43% 60%;}100%{border-radius:63% 37% 54% 46%/55% 48% 52% 45%;}}
+@keyframes ksDriftA{0%{transform:translate(0,0) scale(1);}50%{transform:translate(34px,-26px) scale(1.14);}100%{transform:translate(0,0) scale(1);}}
+@keyframes ksDriftB{0%{transform:translate(0,0) scale(1);}50%{transform:translate(-30px,24px) scale(1.1);}100%{transform:translate(0,0) scale(1);}}
+@keyframes ksDriftC{0%{transform:translate(0,0) scale(1.05);}50%{transform:translate(22px,30px) scale(0.94);}100%{transform:translate(0,0) scale(1.05);}}
+@keyframes ksDot{0%,100%{transform:scale(1);opacity:1;}45%{transform:scale(1.75);opacity:0.35;}}
+@keyframes ksRing{0%{transform:scale(0.28);opacity:0;}12%{opacity:0.6;}80%{opacity:0;}100%{transform:scale(1.65);opacity:0;}}
+@keyframes ksCore{0%,100%{transform:scale(1);box-shadow:0 0 44px 6px rgba(207,148,69,0.55),0 0 0 0 rgba(207,148,69,0.4);}45%{transform:scale(1.14);box-shadow:0 0 70px 14px rgba(207,148,69,0.7),0 0 0 8px rgba(207,148,69,0.12);}}
+@keyframes ksEcg{0%{stroke-dashoffset:1240;}100%{stroke-dashoffset:0;}}
+@keyframes ksBreath{0%,100%{transform:scale(1);}50%{transform:scale(1.08);}}
+@keyframes ksVataFloat{0%{transform:translate(0,0);}25%{transform:translate(6px,-8px);}50%{transform:translate(-5px,-3px);}75%{transform:translate(4px,7px);}100%{transform:translate(0,0);}}
+@keyframes ksVataSwirl{to{transform:rotate(360deg);}}
+@keyframes ksPittaPulse{0%,100%{transform:scale(1);filter:brightness(1);}50%{transform:scale(1.05);filter:brightness(1.16);}}
+@keyframes ksPittaFlicker{0%,100%{opacity:0.34;transform:scale(1);}30%{opacity:0.62;}55%{opacity:0.26;}80%{opacity:0.5;transform:scale(1.04);}}
+@keyframes ksKaphaBreath{0%,100%{transform:scale(1);}50%{transform:scale(1.055);}}
+@keyframes ksKaphaRipple{0%{transform:scale(0.4);opacity:0;}18%{opacity:0.5;}100%{transform:scale(1.18);opacity:0;}}
+@keyframes ksSway{0%,100%{transform:rotate(-6deg);}50%{transform:rotate(6deg);}}
+@keyframes ksMarquee{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+@keyframes ksFall{0%{transform:translate(0,-60px) rotate(-8deg);opacity:0;}9%{opacity:0.9;}26%{transform:translate(46px,150px) rotate(38deg);}48%{transform:translate(-26px,330px) rotate(-22deg);}70%{transform:translate(34px,520px) rotate(58deg);}88%{opacity:0.85;}100%{transform:translate(6px,720px) rotate(28deg);opacity:0;}}
+@keyframes ksBob{0%,100%{transform:translateY(0);opacity:0.6;}50%{transform:translateY(9px);opacity:1;}}
+@keyframes ksWipe{from{clip-path:inset(0 100% 0 0);}to{clip-path:inset(0 0 0 0);}}
+@keyframes ksUnder{from{transform:scaleX(0);}to{transform:scaleX(1);}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:0.001ms!important;animation-iteration-count:1!important;transition-duration:0.001ms!important;}}
+@media (max-width:1100px){[data-navtag]{display:none!important;}}
+@media (max-width:900px){
+ #ks-navlinks{display:none!important;}
+ #ks-burger{display:flex!important;}
+ #ks-vinewrap{display:none!important;}
+ [data-hero]{flex-direction:column!important;gap:44px!important;}
+ [data-hero-media]{width:100%!important;max-width:440px!important;margin:0 auto!important;}
+ [data-2col]{grid-template-columns:1fr!important;gap:40px!important;}
+ [data-pulse]{grid-template-columns:1fr!important;}
+ [data-doshas]{grid-template-columns:1fr!important;max-width:360px!important;}
+ [data-treat]{grid-template-columns:1fr!important;}
+ [data-treat] > div{grid-column:auto!important;grid-row:auto!important;}
+ [data-foods]{grid-template-columns:1fr 1fr!important;}
+ [data-meera]{grid-template-columns:1fr!important;}
+ [data-3r]{grid-template-columns:1fr!important;gap:44px!important;}
+ #ks-3rline{display:none!important;}
+ [data-foot]{grid-template-columns:1fr 1fr!important;}
+ [data-news]{flex-direction:column!important;text-align:center!important;}
+}
+@media (max-width:540px){[data-foods]{grid-template-columns:1fr!important;}[data-foot]{grid-template-columns:1fr!important;}[data-newsform]{flex-direction:column!important;}}
+</style>
+</helmet>
+
+<div id="ksite" style="position:relative;">
+
+<nav id="ks-nav" style="position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:clamp(16px,3vw,48px);padding:20px clamp(20px,5vw,64px);border-bottom:1px solid transparent;transition:background .5s ease,backdrop-filter .5s ease,border-color .5s ease;">
+ <a href="index.html" aria-label="3R Clinic home" style="display:flex;align-items:center;flex-shrink:0;">
+  <img src="images/logo-3r-green.png" alt="3R Clinic" width="56" height="74" style="display:block;width:56px;height:74px;object-fit:contain;flex-shrink:0;">
+ </a>
+ <span aria-hidden="true" style="flex:1;min-width:0;text-align:center;font-family:'Fraunces',serif;font-weight:400;font-size:clamp(30px,2.8vw,40px);letter-spacing:-0.01em;color:#26301F;white-space:nowrap;pointer-events:none;">The 3R Clinic</span>
+ <div id="ks-navlinks" style="display:flex;align-items:center;gap:clamp(14px,2.4vw,38px);flex-shrink:0;margin-left:clamp(40px,7vw,120px);">
+  <a href="index.html" style="font-size:16px;color:#3F4A34;" style-hover="color:#26301F;">Home</a>
+  <a href="About.dc.html" style="font-size:16px;color:#3F4A34;" style-hover="color:#26301F;">About</a>
+  <a href="Ayurveda.dc.html" style="font-size:14px;color:#26301F;border-bottom:2px solid #B8623C;padding-bottom:3px;">Ayurveda</a>
+  <div id="ks-diet" style="position:relative;">
+   <button style="font-size:16px;color:#3F4A34;display:flex;align-items:center;gap:5px;padding:0;white-space:nowrap;" style-hover="color:#26301F;">Diet &amp; Food <span style="font-size:9px;opacity:0.7;">&#9660;</span></button>
+   <div id="ks-dietpanel" style="position:absolute;top:calc(100% + 16px);left:50%;transform:translate(-50%,8px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .35s ease,transform .35s cubic-bezier(0.2,0.7,0.2,1);width:230px;background:#FBF9F3;border:1px solid #D8D0BB;border-radius:16px;padding:10px;box-shadow:0 24px 60px -24px rgba(38,48,31,0.35);">
+    <a href="index.html#diet" style="display:block;padding:10px 14px;border-radius:10px;font-size:14px;color:#3F4A34;" style-hover="background:#EFE9D8;color:#26301F;">Importance of Diet</a>
+    <a href="index.html#sattvic" style="display:block;padding:10px 14px;border-radius:10px;font-size:14px;color:#3F4A34;" style-hover="background:#EFE9D8;color:#26301F;">Sattvic Foods</a>
+    <a href="index.html#recipes" style="display:block;padding:10px 14px;border-radius:10px;font-size:14px;color:#3F4A34;" style-hover="background:#EFE9D8;color:#26301F;">Ayurvedic Recipes</a>
+    <a href="index.html#seasonal" style="display:block;padding:10px 14px;border-radius:10px;font-size:14px;color:#3F4A34;" style-hover="background:#EFE9D8;color:#26301F;">Seasonal Eating</a>
+   </div>
+  </div>
+  <a href="https://kayshudhi.setmore.com/" target="_blank" rel="noopener" data-magnetic style="display:inline-block;white-space:nowrap;flex-shrink:0;background:#B8623C;color:#FBF9F3;font-size:14px;font-weight:500;padding:11px 22px;border-radius:100px;transition:transform .35s cubic-bezier(0.2,0.7,0.2,1),box-shadow .35s ease,background .35s ease;" style-hover="background:#a5542f;box-shadow:0 14px 30px -12px rgba(184,98,60,0.7);">Book a Consultation</a>
+ </div>
+ <button id="ks-burger" aria-label="Open menu" style="display:none;flex-direction:column;gap:5px;padding:8px;">
+  <span style="display:block;width:24px;height:1.5px;background:#26301F;"></span>
+  <span style="display:block;width:24px;height:1.5px;background:#26301F;"></span>
+ </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div id="ks-mobile" aria-hidden="true" style="position:fixed;top:0;right:0;bottom:0;width:min(84vw,340px);z-index:110;background:#26301F;color:#F6F3EA;transform:translateX(100%);transition:transform .6s cubic-bezier(0.2,0.7,0.2,1);padding:28px 30px;display:flex;flex-direction:column;overflow-y:auto;">
+ <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:36px;">
+  <span style="font-family:'Fraunces',serif;font-size:20px;">The 3R Clinic</span>
+  <button id="ks-mclose" aria-label="Close menu" style="color:#F6F3EA;font-size:26px;line-height:1;">&times;</button>
+ </div>
+ <a href="index.html" style="padding:15px 0;font-family:'Fraunces',serif;font-size:24px;border-bottom:1px solid rgba(246,243,234,0.12);color:#F6F3EA;">Home</a>
+ <a href="About.dc.html" style="padding:15px 0;font-family:'Fraunces',serif;font-size:24px;border-bottom:1px solid rgba(246,243,234,0.12);color:#F6F3EA;">About</a>
+ <a href="Ayurveda.dc.html" style="padding:15px 0;font-family:'Fraunces',serif;font-size:24px;border-bottom:1px solid rgba(246,243,234,0.12);color:#F6F3EA;">Ayurveda</a>
+ <a href="index.html#diet" style="padding:15px 0;font-family:'Fraunces',serif;font-size:24px;border-bottom:1px solid rgba(246,243,234,0.12);color:#F6F3EA;">Diet &amp; Food</a>
+ <a href="index.html#recipes" style="padding:15px 0;font-family:'Fraunces',serif;font-size:24px;border-bottom:1px solid rgba(246,243,234,0.12);color:#F6F3EA;">Recipes</a>
+ <a href="https://kayshudhi.setmore.com/" target="_blank" rel="noopener" style="margin-top:26px;text-align:center;background:#B8623C;color:#FBF9F3;padding:15px;border-radius:100px;font-weight:500;">Book a Consultation &#8594;</a>
+</div>
+
+
+<!-- PAGE HERO -->
+<header style="position:relative;overflow:hidden;background:#F6F3EA;">
+ <section style="max-width:900px;margin:0 auto;padding:clamp(150px,20vh,230px) clamp(20px,5vw,64px) clamp(50px,7vh,90px);text-align:center;position:relative;">
+  <div aria-hidden="true" style="position:absolute;top:8%;left:-4%;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,#7D8C5C,transparent 66%);filter:blur(90px);opacity:0.32;pointer-events:none;"></div>
+  <div aria-hidden="true" style="position:absolute;bottom:-10%;right:-2%;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,#CF9445,transparent 66%);filter:blur(96px);opacity:0.26;pointer-events:none;"></div>
+  <div data-reveal style="position:relative;font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#7D8C5C;font-weight:500;margin-bottom:22px;">The science of life</div>
+  <h1 data-reveal data-delay="80" style="position:relative;font-family:'Fraunces',serif;font-weight:300;font-size:clamp(2.6rem,6vw,4.6rem);line-height:1.04;letter-spacing:-0.02em;color:#26301F;margin:0 0 24px;">Ayurveda, <span style="font-style:italic;color:#B8623C;">refined over five millennia.</span></h1>
+  <p data-reveal data-delay="160" style="position:relative;font-size:clamp(16px,1.3vw,19px);line-height:1.7;color:#3F4A34;margin:0 auto;max-width:560px;">A way of living that aligns you with nature rather than forcing the body against it, treating the root cause, not the symptom.</p>
+ </section>
+</header>
+
+<!-- ===================== THE THREE RS ===================== -->
+<section id="ayurveda" style="background:#FBF9F3;padding:clamp(80px,12vh,140px) clamp(20px,5vw,64px);position:relative;z-index:2;">
+ <div data-2col style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px);align-items:center;">
+  <div data-reveal>
+   <div style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(2.4rem,5vw,4rem);line-height:1.05;letter-spacing:-0.02em;color:#26301F;margin-bottom:34px;">The three R&rsquo;s of <span style="font-style:italic;color:#B8623C;">The 3R Clinic</span></div>
+   <div style="display:flex;flex-direction:column;gap:18px;max-width:400px;">
+    <div style="display:flex;gap:16px;padding-bottom:18px;border-bottom:1px solid #D8D0BB;">
+     <span style="font-family:'Fraunces',serif;font-size:22px;color:#7D8C5C;min-width:104px;">Remove</span>
+     <span style="font-size:15px;line-height:1.55;color:#3F4A34;">Clearing the toxins and habits that sit behind illness.</span>
+    </div>
+    <div style="display:flex;gap:16px;padding-bottom:18px;border-bottom:1px solid #D8D0BB;">
+     <span style="font-family:'Fraunces',serif;font-size:22px;color:#B8623C;min-width:104px;">Restore</span>
+     <span style="font-size:15px;line-height:1.55;color:#3F4A34;">Rebalancing the doshas, the tissues and digestion.</span>
+    </div>
+    <div style="display:flex;gap:16px;">
+     <span style="font-family:'Fraunces',serif;font-size:22px;color:#5F6D43;min-width:104px;">Renew</span>
+     <span style="font-size:15px;line-height:1.55;color:#3F4A34;">Building lasting vitality that holds through the seasons.</span>
+    </div>
+   </div>
+  </div>
+  <div data-reveal data-delay="120">
+   <div style="font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#7D8C5C;font-weight:500;margin-bottom:20px;">What is Ayurveda</div>
+   <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(1.9rem,3.7vw,3.1rem);line-height:1.1;letter-spacing:-0.02em;color:#26301F;margin:0 0 26px;">The science of life, refined over five millennia.</h2>
+   <p style="font-size:17px;line-height:1.7;color:#3F4A34;margin:0 0 18px;">Thousands of years before modern medicine, the sages of India developed Ayurveda, a way of living that aligns you with nature rather than forcing the body against it.</p>
+   <p style="font-size:17px;line-height:1.7;color:#3F4A34;margin:0 0 26px;">Through nutrition, herbs, therapy and lifestyle we re-balance your constitution, treating the root cause and not merely the symptom, gently, and free from harmful side effects.</p>
+   <a href="#doshas" style="display:inline-flex;align-items:center;gap:8px;color:#B8623C;font-weight:500;font-size:15px;border-bottom:1px solid rgba(184,98,60,0.4);padding-bottom:3px;transition:gap .3s ease,border-color .3s ease;" style-hover="gap:14px;border-color:#B8623C;">Find your constitution &#8594;</a>
+  </div>
+ </div>
+</section>
+
+<!-- ===================== DOSHAS ===================== -->
+<section id="doshas" style="background:#26301F;color:#F6F3EA;padding:clamp(84px,13vh,150px) clamp(20px,5vw,64px);position:relative;z-index:2;overflow:hidden;">
+ <div style="max-width:760px;margin:0 auto 70px;text-align:center;">
+  <div data-reveal style="font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#CF9445;font-weight:500;margin-bottom:20px;">The three doshas</div>
+  <h2 data-reveal data-delay="80" style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(2rem,4.4vw,3.4rem);line-height:1.1;letter-spacing:-0.02em;color:#F6F3EA;margin:0 0 22px;">Every body is a unique blend of three energies.</h2>
+  <p data-reveal data-delay="160" style="font-size:17px;line-height:1.7;color:#c8cdbd;margin:0;">Vata, Pitta and Kapha govern all of nature, and all of you. Balance is health; imbalance is where dis-ease begins.</p>
+ </div>
+ <div data-doshas style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,56px);">
+  <div data-reveal data-dosha style="text-align:center;display:flex;flex-direction:column;align-items:center;padding:24px 12px;border-radius:26px;transition:transform .6s cubic-bezier(0.2,0.7,0.2,1),background .6s ease;" style-hover="transform:translateY(-8px);background:rgba(246,243,234,0.05);">
+   <div data-orb-wrap style="position:relative;width:clamp(130px,15vw,180px);height:clamp(130px,15vw,180px);transition:transform .5s cubic-bezier(0.22,0.61,0.36,1);">
+    <div data-aura style="position:absolute;inset:-14%;border-radius:50%;background:radial-gradient(circle,rgba(143,150,196,0.5),transparent 68%);opacity:0;transition:opacity .5s ease;pointer-events:none;"></div>
+    <div data-orb data-motion style="position:absolute;inset:0;border-radius:50%;overflow:hidden;background:radial-gradient(circle at 34% 30%,#c7cbe6,#8f96c4 55%,#6e75ad);box-shadow:0 24px 50px -22px rgba(110,117,173,0.7),inset 0 -10px 30px rgba(255,255,255,0.25);animation:ksVataFloat 7s ease-in-out infinite;"><div data-motion style="position:absolute;inset:-30%;background:conic-gradient(from 0deg,transparent,rgba(255,255,255,0.4),transparent 52%,rgba(198,203,230,0.55),transparent);filter:blur(6px);animation:ksVataSwirl 13s linear infinite;"></div></div>
+   </div>
+   <div style="font-family:'Fraunces',serif;font-size:26px;color:#F6F3EA;margin:26px 0 4px;">Vata</div>
+   <div style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#CF9445;margin-bottom:14px;">Air + Ether</div>
+   <p style="font-size:15px;line-height:1.6;color:#c8cdbd;max-width:250px;margin:0;transition:color .5s ease;">Movement and creativity, governs breath, circulation and the nervous system. Balanced: light, energetic, imaginative.</p>
+  </div>
+  <div data-reveal data-delay="120" data-dosha style="text-align:center;display:flex;flex-direction:column;align-items:center;padding:24px 12px;border-radius:26px;transition:transform .6s cubic-bezier(0.2,0.7,0.2,1),background .6s ease;" style-hover="transform:translateY(-8px);background:rgba(246,243,234,0.05);">
+   <div data-orb-wrap style="position:relative;width:clamp(130px,15vw,180px);height:clamp(130px,15vw,180px);transition:transform .5s cubic-bezier(0.22,0.61,0.36,1);">
+    <div data-aura style="position:absolute;inset:-14%;border-radius:50%;background:radial-gradient(circle,rgba(214,139,79,0.55),transparent 68%);opacity:0;transition:opacity .5s ease;pointer-events:none;"></div>
+    <div data-orb data-motion style="position:absolute;inset:0;border-radius:50%;overflow:hidden;background:radial-gradient(circle at 34% 30%,#eabd8a,#d68b4f 52%,#b8623c);box-shadow:0 24px 50px -22px rgba(184,98,60,0.7),inset 0 -10px 30px rgba(255,255,255,0.22);animation:ksPittaPulse 4.6s ease-in-out infinite;"><div data-motion style="position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 42% 38%,rgba(255,229,176,0.75),transparent 58%);animation:ksPittaFlicker 3.2s ease-in-out infinite;"></div></div>
+   </div>
+   <div style="font-family:'Fraunces',serif;font-size:26px;color:#F6F3EA;margin:26px 0 4px;">Pitta</div>
+   <div style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#CF9445;margin-bottom:14px;">Fire + Water</div>
+   <p style="font-size:15px;line-height:1.6;color:#c8cdbd;max-width:250px;margin:0;transition:color .5s ease;">Transformation and focus, governs digestion, metabolism and intellect. Balanced: sharp, warm, driven.</p>
+  </div>
+  <div data-reveal data-delay="240" data-dosha style="text-align:center;display:flex;flex-direction:column;align-items:center;padding:24px 12px;border-radius:26px;transition:transform .6s cubic-bezier(0.2,0.7,0.2,1),background .6s ease;" style-hover="transform:translateY(-8px);background:rgba(246,243,234,0.05);">
+   <div data-orb-wrap style="position:relative;width:clamp(130px,15vw,180px);height:clamp(130px,15vw,180px);transition:transform .5s cubic-bezier(0.22,0.61,0.36,1);">
+    <div data-aura style="position:absolute;inset:-14%;border-radius:50%;background:radial-gradient(circle,rgba(139,160,102,0.5),transparent 68%);opacity:0;transition:opacity .5s ease;pointer-events:none;"></div>
+    <div data-orb data-motion style="position:absolute;inset:0;border-radius:50%;overflow:hidden;background:radial-gradient(circle at 34% 30%,#b9c69a,#8ba066 54%,#5f6d43);box-shadow:0 24px 50px -22px rgba(95,109,67,0.8),inset 0 -10px 30px rgba(255,255,255,0.2);animation:ksKaphaBreath 9.5s ease-in-out infinite;"><div data-motion style="position:absolute;inset:20%;border-radius:50%;border:1.5px solid rgba(255,255,255,0.4);animation:ksKaphaRipple 7s ease-in-out infinite;"></div></div>
+   </div>
+   <div style="font-family:'Fraunces',serif;font-size:26px;color:#F6F3EA;margin:26px 0 4px;">Kapha</div>
+   <div style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#CF9445;margin-bottom:14px;">Earth + Water</div>
+   <p style="font-size:15px;line-height:1.6;color:#c8cdbd;max-width:250px;margin:0;transition:color .5s ease;">Structure and calm, governs immunity, strength and stability. Balanced: grounded, loving, enduring.</p>
+  </div>
+ </div>
+</section>
+
+<!-- ===================== FINAL CTA ===================== -->
+<section id="cta" style="background:#F6F3EA;padding:clamp(70px,10vh,120px) clamp(20px,5vw,64px);position:relative;z-index:2;">
+ <div data-reveal style="max-width:1120px;margin:0 auto;position:relative;overflow:hidden;background:#5F6D43;border-radius:clamp(28px,4vw,44px);padding:clamp(50px,8vw,96px) clamp(28px,6vw,80px);text-align:center;">
+  <div style="position:absolute;top:-20%;left:6%;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,#CF9445,transparent 66%);filter:blur(90px);opacity:0.42;pointer-events:none;"></div>
+  <div style="position:absolute;bottom:-24%;right:8%;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,#B8623C,transparent 66%);filter:blur(96px);opacity:0.4;pointer-events:none;"></div>
+  <div style="position:relative;">
+   <div style="font-size:12px;letter-spacing:0.24em;text-transform:uppercase;color:#e4dcc4;font-weight:500;margin-bottom:22px;">Begin today</div>
+   <h2 style="font-family:'Fraunces',serif;font-weight:300;font-size:clamp(2rem,4.6vw,3.5rem);line-height:1.1;letter-spacing:-0.02em;color:#FBF9F3;margin:0 auto 24px;max-width:16ch;">Your path to balance starts with a single pulse.</h2>
+   <p style="font-size:17px;line-height:1.7;color:#e4dcc4;margin:0 auto 36px;max-width:560px;">Book an initial pulse diagnosis consultation with Meera Menon and receive a treatment plan made entirely for you.</p>
+   <a href="https://kayshudhi.setmore.com/" target="_blank" rel="noopener" data-magnetic style="display:inline-flex;align-items:center;gap:8px;background:#FBF9F3;color:#26301F;font-size:15px;font-weight:600;padding:16px 32px;border-radius:100px;transition:transform .4s cubic-bezier(0.2,0.7,0.2,1),box-shadow .4s ease;" style-hover="box-shadow:0 20px 44px -16px rgba(0,0,0,0.4);">Book a Consultation &#8594;</a>
+   <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px 30px;margin-top:38px;padding-top:30px;border-top:1px solid rgba(251,249,243,0.18);font-size:14px;color:#e4dcc4;">
+    <a href="mailto:meerasoni@kayshudhi.com" style="transition:color .3s ease;" style-hover="color:#FBF9F3;">meerasoni@kayshudhi.com</a>
+    <a href="tel:+447417401256" style="transition:color .3s ease;" style-hover="color:#FBF9F3;">+44 7417 401256</a>
+    <span>Mon&ndash;Fri 10&ndash;5 &middot; Sat &amp; Sun by phone</span>
+    <span>Pinner, London</span>
+   </div>
+  </div>
+ </div>
+</section>
+
+<footer style="background:#26301F;color:#c8cdbd;padding:clamp(60px,9vh,100px) clamp(20px,5vw,64px) 40px;position:relative;z-index:2;">
+ <div data-foot style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:clamp(30px,4vw,60px);">
+  <div>
+   <div style="display:flex;align-items:center;gap:11px;margin-bottom:20px;">
+    <img src="images/logo-3r-green-footer.png" alt="" width="34" height="45" style="display:block;width:34px;height:45px;object-fit:contain;flex-shrink:0;">
+    <span style="font-family:'Fraunces',serif;font-size:22px;color:#F6F3EA;white-space:nowrap;">The 3R Clinic</span>
+   </div>
+   <p style="font-size:15px;line-height:1.7;max-width:320px;margin:0;">Holistic Ayurveda by Meera Menon. Detox mind, body and soul, and attain positive health and happiness.</p>
+  </div>
+  <div>
+   <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#7D8C5C;margin-bottom:18px;">Explore</div>
+   <div style="display:flex;flex-direction:column;gap:12px;font-size:15px;">
+    <a href="Ayurveda.dc.html" style="transition:color .3s ease;" style-hover="color:#CF9445;">What is Ayurveda</a>
+    <a href="Ayurveda.dc.html#doshas" style="transition:color .3s ease;" style-hover="color:#CF9445;">The Doshas</a>
+    <a href="index.html#services" style="transition:color .3s ease;" style-hover="color:#CF9445;">Services</a>
+    <a href="index.html#diet" style="transition:color .3s ease;" style-hover="color:#CF9445;">Diet &amp; Food</a>
+   </div>
+  </div>
+  <div>
+   <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#7D8C5C;margin-bottom:18px;">Visit</div>
+   <div style="display:flex;flex-direction:column;gap:12px;font-size:15px;">
+    <span>Pinner, London</span>
+    <span>Mon&ndash;Fri &middot; 10&ndash;5</span>
+    <span>Sat &amp; Sun by phone</span>
+   </div>
+  </div>
+  <div>
+   <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#7D8C5C;margin-bottom:18px;">Connect</div>
+   <div style="display:flex;flex-direction:column;gap:12px;font-size:15px;">
+    <a href="mailto:meerasoni@kayshudhi.com" style="transition:color .3s ease;" style-hover="color:#CF9445;">meerasoni@kayshudhi.com</a>
+    <a href="tel:+447417401256" style="transition:color .3s ease;" style-hover="color:#CF9445;">+44 7417 401256</a>
+    <a href="https://kayshudhi.setmore.com/" target="_blank" rel="noopener" style="transition:color .3s ease;" style-hover="color:#CF9445;">Book online &#8594;</a>
+   </div>
+  </div>
+ </div>
+ <div style="max-width:1180px;margin:56px auto 0;padding-top:24px;border-top:1px solid rgba(246,243,234,0.12);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:13px;letter-spacing:0.04em;color:#8f9781;">
+  <span>&copy; 2026 The 3R Clinic</span>
+  <span style="letter-spacing:0.16em;">Remove &middot; Restore &middot; Renew</span>
+ </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const root = document.getElementById('ksite');
+    if (!root) return;
+    const $ = (s) => root.querySelector(s);
+    const $$ = (s) => Array.from(root.querySelectorAll(s));
+    const rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const EASE = 'cubic-bezier(0.2,0.7,0.2,1)';
+
+    // -------- INTRO OVERLAY --------
+    const intro = $('#ks-intro');
+    const introWord = $('#ks-introword');
+    if (intro) {
+      let seen = false;
+      try { seen = sessionStorage.getItem('ks_intro_seen') === '1'; } catch (e) {}
+      try { sessionStorage.setItem('ks_intro_seen', '1'); } catch (e) {}
+      const finish = () => { intro.style.display = 'none'; };
+      if (rm) {
+        intro.style.transition = 'opacity .3s ease';
+        setTimeout(() => { intro.style.opacity = '0'; setTimeout(finish, 320); }, 200);
+      } else if (seen) {
+        setTimeout(() => { intro.style.transform = 'translateY(-100%)'; setTimeout(finish, 700); }, 350);
+      } else {
+        setTimeout(() => { if (introWord) { introWord.style.transform = 'scale(1.06)'; introWord.style.opacity = '0'; } }, 1350);
+        setTimeout(() => { intro.style.transform = 'translateY(-100%)'; }, 1650);
+        setTimeout(finish, 2450);
+      }
+    }
+
+    // -------- NAV frosted + scroll-driven reveals + vine --------
+    const nav = $('#ks-nav');
+    const vine = $('#ks-vine');
+    const nodes = $$('[data-node]');
+    let vlen = 0;
+    if (vine && vine.getTotalLength) {
+      try { vlen = vine.getTotalLength(); vine.style.strokeDasharray = vlen; vine.style.strokeDashoffset = rm ? 0 : vlen; } catch (e) {}
+    }
+
+    const reveal = (el) => { el.style.opacity = '1'; el.style.transform = 'none'; el.style.filter = 'none'; };
+    const revItems = $$('[data-reveal]');
+    const scItems = $$('[data-scatter]');
+    const imgItems = $$('[data-img]');
+
+    const REV = 'cubic-bezier(0.22,0.61,0.36,1)';
+    const inView = (el) => { const r = el.getBoundingClientRect(); const vh = window.innerHeight || 800; return r.top < vh && r.bottom > 0; };
+    if (!rm) {
+      // auto-stagger: reveal siblings without an explicit delay arrive ~90ms apart
+      const groups = new Map();
+      revItems.forEach((el) => { if (!el.hasAttribute('data-delay')) { const p = el.parentElement; const a = groups.get(p) || []; a.push(el); groups.set(p, a); } });
+      groups.forEach((a) => { if (a.length > 1) a.forEach((el, i) => el.setAttribute('data-delay', String(i * 90))); });
+      revItems.forEach((el) => {
+        if (inView(el)) { el.dataset.shown = '1'; return; } // already visible on first paint
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(28px)';
+        el.style.filter = 'blur(2px)';
+        el.style.transition = 'opacity .9s ' + REV + ', transform .9s ' + REV + ', filter .9s ' + REV;
+        el.style.willChange = 'opacity, transform, filter';
+      });
+      scItems.forEach((el, i) => {
+        if (inView(el)) { el.dataset.shown = '1'; return; }
+        const rx = (Math.random() * 20 - 10).toFixed(1);
+        const rot = (Math.random() * 5 - 2.5).toFixed(1);
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(40px) translateX(' + rx + 'px) rotate(' + rot + 'deg)';
+        el.style.transition = 'opacity .95s ' + REV + ', transform 1.05s ' + REV;
+        el.setAttribute('data-scdelay', String(i * 110 + Math.round(Math.random() * 60)));
+      });
+      imgItems.forEach((el) => {
+        if (inView(el)) { el.dataset.shown = '1'; return; }
+        el.style.filter = 'blur(10px)';
+        el.style.transform = 'scale(1.06)';
+        el.style.transition = 'filter 1.3s ' + REV + ', transform 1.5s ' + REV;
+        el.style.willChange = 'filter, transform';
+      });
+    }
+
+    const checkReveals = () => {
+      const vh = window.innerHeight;
+      const trigger = vh * 0.9;
+      revItems.forEach((el) => {
+        if (el.dataset.shown) return;
+        const r = el.getBoundingClientRect();
+        if (r.top < trigger && r.bottom > 0) {
+          el.dataset.shown = '1';
+          const d = parseFloat(el.getAttribute('data-delay') || '0');
+          setTimeout(() => reveal(el), d);
+        }
+      });
+      scItems.forEach((el) => {
+        if (el.dataset.shown) return;
+        const r = el.getBoundingClientRect();
+        if (r.top < trigger && r.bottom > 0) {
+          el.dataset.shown = '1';
+          const d = parseFloat(el.getAttribute('data-scdelay') || '0');
+          setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'none'; }, d);
+        }
+      });
+      imgItems.forEach((el) => {
+        if (el.dataset.shown) return;
+        const r = el.getBoundingClientRect();
+        if (r.top < vh && r.bottom > 0) { el.dataset.shown = '1'; el.style.filter = 'none'; el.style.transform = 'scale(1)'; }
+      });
+    };
+
+    const onScroll = () => {
+      const y = window.scrollY || window.pageYOffset || 0;
+      if (nav) {
+        if (y > 40) {
+          nav.style.background = 'rgba(246,243,234,0.82)';
+          nav.style.backdropFilter = 'blur(14px)';
+          nav.style.webkitBackdropFilter = 'blur(14px)';
+          nav.style.borderBottomColor = '#D8D0BB';
+        } else {
+          nav.style.background = 'transparent';
+          nav.style.backdropFilter = 'none';
+          nav.style.webkitBackdropFilter = 'none';
+          nav.style.borderBottomColor = 'transparent';
+        }
+      }
+      if (!rm && vine && vlen) {
+        const total = document.documentElement.scrollHeight - window.innerHeight;
+        const p = total > 0 ? Math.min(1, Math.max(0, y / total)) : 0;
+        vine.style.strokeDashoffset = String(vlen * (1 - p));
+        nodes.forEach((n, i) => {
+          const th = 0.14 + i * 0.18;
+          if (p > th) { n.style.opacity = '1'; n.style.transform = 'scale(1) rotate(0deg)'; }
+        });
+      }
+      checkReveals();
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', checkReveals, { passive: true });
+    onScroll();
+    // hard safety net, nothing may stay invisible past 1.2s
+    setTimeout(checkReveals, 300);
+    setTimeout(() => {
+      revItems.forEach((el) => { el.style.opacity = '1'; el.style.transform = 'none'; el.style.filter = 'none'; });
+      scItems.forEach((el) => { el.style.opacity = '1'; el.style.transform = 'none'; });
+      imgItems.forEach((el) => { el.style.filter = 'none'; el.style.transform = 'scale(1)'; });
+    }, 1200);
+
+    // -------- Dropdown --------
+    const dd = $('#ks-diet');
+    const panel = $('#ks-dietpanel');
+    if (dd && panel) {
+      let t;
+      const open = () => { clearTimeout(t); panel.style.opacity = '1'; panel.style.visibility = 'visible'; panel.style.pointerEvents = 'auto'; panel.style.transform = 'translate(-50%,0)'; };
+      const close = () => { t = setTimeout(() => { panel.style.opacity = '0'; panel.style.visibility = 'hidden'; panel.style.pointerEvents = 'none'; panel.style.transform = 'translate(-50%,8px)'; }, 130); };
+      dd.addEventListener('mouseenter', open);
+      dd.addEventListener('mouseleave', close);
+      panel.addEventListener('mouseenter', open);
+      panel.addEventListener('mouseleave', close);
+      const btn = dd.querySelector('button');
+      if (btn) btn.addEventListener('click', (e) => { e.preventDefault(); (panel.style.opacity === '1') ? close() : open(); });
+      panel.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => { panel.style.opacity = '0'; panel.style.visibility = 'hidden'; panel.style.pointerEvents = 'none'; }));
+    }
+
+    // -------- Mobile menu --------
+    const burger = $('#ks-burger');
+    const menu = $('#ks-mobile');
+    if (burger && menu) {
+      const openM = () => { menu.style.transform = 'translateX(0)'; menu.setAttribute('aria-hidden', 'false'); };
+      const closeM = () => { menu.style.transform = 'translateX(100%)'; menu.setAttribute('aria-hidden', 'true'); };
+      burger.addEventListener('click', openM);
+      const mc = $('#ks-mclose');
+      if (mc) mc.addEventListener('click', closeM);
+      menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeM));
+    }
+
+    // -------- Recipe drawers --------
+    $$('[data-recipe]').forEach((row) => {
+      const btn = row.querySelector('button');
+      const drawer = row.querySelector('[data-rdrawer]');
+      const plus = row.querySelector('[data-rplus]');
+      if (!btn || !drawer) return;
+      btn.addEventListener('click', () => {
+        const isOpen = drawer.style.maxHeight && drawer.style.maxHeight !== '0px';
+        if (isOpen) {
+          drawer.style.maxHeight = '0px'; drawer.style.opacity = '0';
+          if (plus) plus.style.transform = 'rotate(0deg)';
+        } else {
+          drawer.style.maxHeight = drawer.scrollHeight + 'px'; drawer.style.opacity = '1';
+          if (plus) plus.style.transform = 'rotate(135deg)';
+        }
+      });
+    });
+
+    // -------- 3R connecting line draw-in --------
+    const line3r = $('#ks-3rline');
+    if (line3r) {
+      if (rm) { line3r.style.transform = 'scaleX(1)'; }
+      else {
+        const draw3r = () => {
+          const r = line3r.getBoundingClientRect();
+          if (r.top < window.innerHeight * 0.85 && r.bottom > 0) {
+            line3r.style.transform = 'scaleX(1)';
+            window.removeEventListener('scroll', draw3r);
+          }
+        };
+        window.addEventListener('scroll', draw3r, { passive: true });
+        draw3r();
+      }
+    }
+
+    // -------- Newsletter --------
+    const form = $('#ks-newsform');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const ok = $('#ks-newsok');
+        const leaf = $('#ks-okleaf');
+        form.style.display = 'none';
+        if (ok) ok.style.display = 'flex';
+        if (leaf) requestAnimationFrame(() => { leaf.style.transform = 'scale(1) rotate(0deg)'; });
+      });
+    }
+
+    if (rm) return; // skip the pointer-driven flourishes
+
+    // -------- Hero parallax --------
+    const hero = $('#ks-hero');
+    const fields = $$('[data-field]');
+    const heroblob = $('#ks-heroblob');
+    if (hero) {
+      hero.addEventListener('mousemove', (ev) => {
+        const r = hero.getBoundingClientRect();
+        const cx = (ev.clientX - r.left) / r.width - 0.5;
+        const cy = (ev.clientY - r.top) / r.height - 0.5;
+        fields.forEach((f, i) => { const m = (i + 1) * 16; f.style.transform = 'translate(' + (cx * m).toFixed(1) + 'px,' + (cy * m).toFixed(1) + 'px)'; });
+        if (heroblob) heroblob.style.transform = 'translate(' + (cx * 12).toFixed(1) + 'px,' + (cy * 12).toFixed(1) + 'px)';
+      });
+      hero.addEventListener('mouseleave', () => {
+        fields.forEach((f) => { f.style.transform = 'translate(0,0)'; });
+        if (heroblob) heroblob.style.transform = 'translate(0,0)';
+      });
+    }
+
+    // -------- Magnetic buttons --------
+    $$('[data-magnetic]').forEach((btn) => {
+      btn.addEventListener('mousemove', (ev) => {
+        const r = btn.getBoundingClientRect();
+        const x = ev.clientX - r.left - r.width / 2;
+        const y = ev.clientY - r.top - r.height / 2;
+        btn.style.transform = 'translate(' + (x * 0.28).toFixed(1) + 'px,' + (y * 0.4).toFixed(1) + 'px)';
+      });
+      btn.addEventListener('mouseleave', () => { btn.style.transform = 'translate(0,0)'; });
+    });
+
+    // -------- Therapy cards: rotating + / expand copy / lift --------
+    $$('[data-therapy]').forEach((c) => {
+      const plus = c.querySelector('[data-plus]');
+      const more = c.querySelector('[data-more]');
+      c.addEventListener('mouseenter', () => {
+        if (plus) plus.style.transform = 'rotate(135deg)';
+        c.style.transform = 'translateY(-6px)';
+        c.style.boxShadow = '0 40px 70px -44px rgba(38,48,31,0.5)';
+        if (more) { more.style.maxHeight = more.scrollHeight + 'px'; more.style.opacity = '1'; }
+      });
+      c.addEventListener('mouseleave', () => {
+        if (plus) plus.style.transform = 'rotate(0deg)';
+        c.style.transform = 'translateY(0)';
+        if (more) { more.style.maxHeight = '0px'; more.style.opacity = '0'; }
+      });
+    });
+
+    // -------- Living dosha orbs: hover bloom + aura + brighten --------
+    $$('[data-dosha]').forEach((d) => {
+      const wrap = d.querySelector('[data-orb-wrap]');
+      const aura = d.querySelector('[data-aura]');
+      const desc = d.querySelector('p');
+      d.addEventListener('mouseenter', () => {
+        if (wrap) wrap.style.transform = 'scale(1.06)';
+        if (aura) aura.style.opacity = '1';
+        if (desc) desc.style.color = '#F6F3EA';
+      });
+      d.addEventListener('mouseleave', () => {
+        if (wrap) wrap.style.transform = 'scale(1)';
+        if (aura) aura.style.opacity = '0';
+        if (desc) desc.style.color = '#c8cdbd';
+      });
+    });
+
+    // -------- Nav underline brushstroke --------
+    const ayur = root.querySelector('#ks-navlinks a[href="#ayurveda"]');
+    if (ayur) {
+      const line = ayur.querySelector('span');
+      ayur.addEventListener('mouseenter', () => { if (line) line.style.width = '100%'; });
+      ayur.addEventListener('mouseleave', () => { if (line) line.style.width = '0'; });
+    }
+  }
+}
+</script>
+</body>
+</html>
