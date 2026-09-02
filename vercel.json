@@ -18,6 +18,17 @@
   ],
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "(?!.*-git-).*\\.vercel\\.app"
+        }
+      ],
+      "destination": "https://www.the3rclinic.com/",
+      "permanent": false
+    },
+    {
       "source": "/:path*",
       "has": [
         {
