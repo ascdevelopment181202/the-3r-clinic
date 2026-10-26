@@ -18,6 +18,26 @@
   ],
   "redirects": [
     {
+      "source": "/About.dc.html",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/Ayurveda.dc.html",
+      "destination": "/ayurveda",
+      "permanent": true
+    },
+    {
+      "source": "/Diet.dc.html",
+      "destination": "/diet",
+      "permanent": true
+    },
+    {
+      "source": "/Reviews.dc.html",
+      "destination": "/reviews",
+      "permanent": true
+    },
+    {
       "source": "/index.html",
       "destination": "/",
       "permanent": true
@@ -43,6 +63,24 @@
       ],
       "destination": "https://www.the3rclinic.com/:path*",
       "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/about",
+      "destination": "/About.dc.html"
+    },
+    {
+      "source": "/ayurveda",
+      "destination": "/Ayurveda.dc.html"
+    },
+    {
+      "source": "/diet",
+      "destination": "/Diet.dc.html"
+    },
+    {
+      "source": "/reviews",
+      "destination": "/Reviews.dc.html"
     }
   ]
 }
